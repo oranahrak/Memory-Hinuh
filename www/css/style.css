@@ -1,0 +1,653 @@
+@font-face {
+  font-family: 'Varela Round';
+  src: url('./VarelaRound-Regular.ttf') format('truetype');
+}
+
+* {
+  font-family: 'Varela Round', sans-serif !important;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.fontsize {
+  font-size: 14px;
+}
+
+.card,
+.list-inset {
+  overflow: hidden;
+  margin: 10px 5px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.content {
+  bottom: 50%;
+}
+
+.correctMainText {
+  color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+.inCorrectMainText {
+  -webkit-text-fill-color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+.smalltext {
+  -webkit-text-fill-color: white;
+  /* padding-top: 25%; */
+  text-align: center;
+  font-size: 7vh;
+}
+
+.bigtext {
+  -webkit-text-fill-color: white;
+  /* padding-top: 25%; */
+  text-align: center;
+  font-size: 15vh;
+}
+
+.allTermsGlossary {
+  position: absolute;
+  margin-top: 2em;
+  left: 50%;
+}
+
+.glossary-title-game {
+  color: white;
+  bottom: 0;
+  position: fixed;
+  font-size: 3.2vh;
+  text-align: center;
+}
+
+.instruction-text {
+  font-size: 1em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+.about-text {
+  font-size: 1.6em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+.glossarypic-game {
+  width: 6.5vh;
+  z-index: 3;
+  /* height: 1.8em; */
+  position: fixed;
+  bottom: 0;
+  margin-left: 11vh;
+}
+
+.correcttext {
+  -webkit-text-fill-color: white;
+  text-align: center;
+  font-size: 1em;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  width: 1em;
+  align-items: center;
+  font-size: 2em;
+}
+
+.terms-title {
+  transform: rotate(90deg);
+  position: relative;
+  right: 0.8em;
+}
+
+.definitions-title {
+  transform: rotate(-90deg);
+  position: relative;
+  right: 0.8em;
+}
+
+.bigcard-definition {
+  z-index: 4;
+  position: absolute;
+  opacity: 0.9;
+  border: 1px solid black;
+  width: 77%;
+  height: 88%;
+  display: flex;
+  justify-content: center;
+  /* align-self: center; */
+  vertical-align: center;
+  background: white;
+  align-items: center;
+  border-radius: 20px;
+  text-align: center;
+  /* line-height: 30px; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.front {
+  background: white;
+  height: 100%;
+  backface-visibility: hidden;
+  font-size: 200%;
+}
+
+.back {
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cardback {
+  width: 100%;
+  height: 100%;
+}
+
+/*class to the cards  */
+
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+/*class to all the buttons */
+
+.buttons {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: flex-start;
+  border-bottom: 1px solid white;
+}
+
+/*flexbox in about poage  */
+
+.buttons-about {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: flex-start;
+  border-bottom: 1px solid white;
+}
+
+.instructions-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  bottom: 6vh;
+  position: fixed;
+  z-index: 1;
+}
+
+/*
+********************************
+the     game     css !!!!
+********************************
+*/
+
+.card {
+  height: 23vh;
+  width: 26%;
+  min-width: 10%;
+  /* margin: 1em; */
+  border: 3em;
+}
+
+.terms {
+  flex: 2;
+  position: relative;
+  height: 100%;
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: right;
+  justify-content: space-around;
+}
+
+.definitions {
+  position: relative;
+  flex: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: right;
+  justify-content: space-around;
+
+}
+
+.front {
+  transform: rotateY(-180deg);
+  transition-duration: 1s;
+}
+
+.elementhide {
+  visibility: hidden;
+}
+
+
+.equal-cards {
+  margin-left: 40%;
+  padding-top: 0.5em;
+  width: 20%;
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  border: 0.1em solid white;
+  z-index: 4;
+  position: fixed;
+  bottom: 4%;
+  font-size: 1em;
+  vertical-align: middle;
+  line-height: 1em;
+}
+
+.card.flipped {
+  border-radius: 25px;
+}
+
+.life {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 15%;
+  padding-left: 58%;
+}
+
+.heart {
+  width: 4.5%;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+}
+
+
+.correct-answer {
+  background-color: rgb(152, 203, 102);
+  filter: alpha(opacity=60);
+  z-index: 10;
+  opacity: 0.85;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.correctanswertext {
+  color: white;
+}
+.answer-text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.incorrect-answer {
+  background-color: #CC3232;
+  z-index: 10;
+  opacity: 0.85;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.to-menu-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 1em;
+}
+
+.gamebutton-tomenu-screen {
+  background-color: #003366;
+  opacity: 0.85;
+  z-index: 12;
+  font-size: 4.5vh;
+  border-radius: 1.3em;
+  color: white;
+  padding: 0.6em 2em;
+}
+
+.to-menu-screen {
+  background-color: #003366;
+  opacity: 0.85;
+  height: 100%;
+  width: 100%;
+  z-index: 12;
+  position: absolute;
+  padding-top: 4em;
+}
+
+.incorrectanswertext {
+  text-align: center;
+  color: white;
+  padding-top: 20%;
+}
+
+.gameover {
+  background-image: linear-gradient(-45deg, #003366, #000033);
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.termsdict {
+  color: white;
+}
+
+.gameoption-title2 {
+  text-align: center;
+}
+
+.setlevelpic {
+  z-index: -1;
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
+.setlevelcolor {
+  background-image: linear-gradient(-45deg, #003366, #000033);
+}
+
+.termtext {
+  font-size: 2em;
+  z-index: 5;
+  transform: rotate(-90deg);
+}
+
+.gamescreen {
+  margin-bottom: 0;
+  width: 100%;
+  position: fixed;
+  height: 13%;
+}
+
+.hide_card {
+  visibility: hidden;
+}
+
+
+/*
+**********************
+style of pages
+**********************
+
+*/
+
+.glossary_card {
+  z-index: 4;
+  position: fixed;
+  height: 50vh;
+  width: 33vh;
+  border-radius: 15px;
+  background-color: white;
+  opacity: 0.5;
+  left: 2em;
+  top: 25%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20px;
+  -webkit-text-fill-color: black;
+}
+
+.glossary_term {
+  font-size: 1.3em;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row-reverse;
+  vertical-align: middle;
+  line-height: 1.2em;
+  color: white;
+}
+
+.ellipse-glossary {
+  left: 50%;
+  height: 1500px;
+  background-image: linear-gradient(-45deg, #003366, #000033);
+  -moz-border-radius: 200px / 100px;
+  -webkit-border-radius: 200px / 100px;
+  border-radius: 1300px / 100px;
+}
+
+/*the main title   */
+
+.main-title {
+  padding-top: 0.6em;
+  color: #652C8F;
+  font-size: 14vh;
+}
+
+/*button to game  */
+
+.to-game {
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  border: 0.1em solid #F16622;
+  font-size: 7vh;
+  margin-top: 0.2em;
+  padding: 0.2em 1em;
+  color: white;
+  width: 8em;
+}
+
+.instruction-title {
+  padding-top: 0.1em;
+  padding-left: 30%;
+  color: #652C8F;
+  font-size: 4.3em;
+}
+
+.gameoption-title {
+  text-align: center;
+  font-size: 10vh;
+  z-index: 3;
+}
+
+.back-button-instruction {
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  border: 0.1em solid #F16622;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
+  color: white;
+  width: 8em;
+  z-index: 3;
+  left: 45%;
+}
+
+.togame-button-instructor {
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  border: 0.1em solid #F16622;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
+  color: white;
+  width: 8em;
+  z-index: 3;
+  right: 45%;
+}
+
+.back-button-about {
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  border: 0.1em solid #F16622;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
+  color: white;
+  width: 8em;
+  z-index: 3;
+  left: 65%;
+  bottom: 7%;
+  position: fixed;
+}
+
+.about-title {
+  color: #336699;
+  font-size: 3.5em;
+}
+
+.backhomepage {
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  font-size: 2em;
+  padding: 0.2em 1em;
+  color: white;
+  width: 10em;
+  /* margin-top: 3.5em; */
+  /* margin-left: 3.5em; */
+}
+
+.toGameOptions {
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, #F16622, #F7981D);
+  font-size: 2em;
+  padding: 0.2em 1em;
+  color: white;
+  width: 10em;
+}
+
+.sidemenu {
+  height: 9%;
+  /* width: 2em; */
+  bottom: 0;
+  right: 0;
+  position: fixed;
+}
+
+/*button to about screen  */
+
+.to-about {
+  border-radius: 3em;
+  border: 0.1em solid #4167B0;
+  line-height: 0;
+  font-size: 6vh;
+  z-index: 2;
+}
+
+/*button to instruction screen  */
+
+.to-instruction {
+  border-radius: 3em;
+  border: 0.1em solid #4167B0;
+  font-size: 6vh;
+  padding: 0vh;
+  padding-right: 5vh;
+  padding-left: 5vh;
+  z-index: 2;
+}
+
+/* class that connect about and instruction buttons in the start page  */
+
+.about-instruction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 0.4em;
+}
+
+.to-about,
+.to-instruction {
+  margin: 1em;
+}
+
+/*the triangles pic in the bottom of the page  */
+
+.tripic {
+  margin-bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.bottom img {
+  position: fixed;
+  bottom: 0;
+}
+
+.button-setsubject {
+  z-index: 5;
+  border-radius: 2em;
+  background-image: linear-gradient(-45deg, white, #CCCBCB);
+  font-size: 2.2em;
+  padding: 0.1em 0.8em;
+  padding-left: 0.3em;
+  margin-top: 0.8em;
+  text-align: center;
+  width: 8em;
+  right: 45%;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row-reverse;
+  vertical-align: middle;
+  line-height: 1.2em;
+}
+
+.gameoptions-flex {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-content: flex-start;
+}
+
+.circle {
+  margin-right: -10%;
+  margin-left: 0.3em;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(-45deg, #F16622, #F7981D);
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: 1em;
+  text-align: center;
+  text-align-last: center;
+  -webkit-text-fill-color: white;
+  vertical-align: middle;
+  line-height: 1.2em;
+}
+
+.v-setsubject {
+  width: 1em;
+  height: 1em;
+  color: linear-gradient(-45deg, #98CB66, #659941);
+  fill: yellow;
+}
+
+.glossarypic {
+  width: 1.2em;
+  z-index: 10;
+  height: 1.8em;
+  position: fixed;
+}
+
+.flex-title-glossary {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  margin-right: 1em;
+}
+
+.downline {
+  background: blue;
+}

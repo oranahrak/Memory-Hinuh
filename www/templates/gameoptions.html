@@ -1,0 +1,26 @@
+<ion-view view-title="gameoptions page">
+  <ion-content scroll="true" class="setlevelcolor">
+
+    <h1 class="gameoption-title">
+      בחר נושא
+    </h1>
+    <img src="img/setlevel.png" class="setlevelpic">
+
+
+    <!-- All the levels in the game -->
+    <div class="gameoptions-flex">
+      <div class="button-setsubject" ng-repeat="subject in subjects" ng-click="goToGame(subject,$index)">
+
+        <div class="circle">{{ $index+1 }}</div>
+
+        {{ subject.name }}
+
+      </div>
+
+    </div>
+
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="gameoptions page">
+  <ion-content scroll="false">
+
+    <h1 class="gameoption-title">
+      <div class="flex-title-glossary">
+        <img src="img/bookmark.svg" class="glossarypic">
+      </div>
+      <div class="glossary-title">מילון מושגים</div>
+    </h1>
+
+
+
+    <div class="ellipse-glossary">
+      <img src="img/backbutton.png" class="sidemenu" ui-sref="game">
+
+    <!--The definition of the term that clicked  -->
+      <div class="glossary_card">{{ theindex }}</div>
+      <!-- The terms that the user success to match -->
+      <div class="allTermsGlossary">
+        <div class="glossary_term" ng-repeat="term in terms" ng-click="termclicked($index)" ng-show="term.matched"> {{ term.value }} </div>
+      </div>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,104 @@
+<ion-view view-title="game page">
+  <ion-content scroll="false">
+
+    <!-- correct answer screen -->
+    <div class="correct-answer answer-text" ng-show="correctanswer">
+      <h1 class="correctMainText">התאמה נכונה</h1>
+      <h1 class="correcttext">תוכל למצוא את המושג במילון המושגים</h1>
+    </div>
+    <!-- incorrect answer screen -->
+    <div class="incorrect-answer answer-text" ng-show="incorrectanswer">
+
+      <h1 class="inCorrectMainText">נסו שוב</h1>
+    </div>
+    <!-- to menu screen -->
+    <div class="to-menu-screen" ng-show="toMenuScreen">
+      <h1 class="bigtext"> !שימו לב</h1>
+      <h1 class="smalltext"> הינכם יוצאים מהמשחק הנוכחי</br>
+        <h1 class="smalltext"> התקדמותכם לא תשמר </h1>
+        <div class="to-menu-buttons">
+          <button class="gamebutton-tomenu-screen" ui-sref="home" ng-click="resetgame()">צא לתפריט</button>
+          <button class="gamebutton-tomenu-screen" ng-click="togame()">המשך משחק</button>
+        </div>
+
+    </div>
+    </div>
+    <!-- game over screen -->
+    <div class="gameover" ng-show="gameover">
+      <h1 class="incorrectanswertext">המשחק נגמר</h1>
+      <button class="backhomepage" ui-sref="home" ng-click="resetgame()">
+        חזור למסך הראשי
+      </button>
+    </div>
+    <!-- success level, go to levels menu -->
+    <div class="gameover" ng-show="levelfinished">
+      <h1 class="incorrectanswertext">!הצלחת</h1>
+      <button class="toGameOptions" ui-sref="gameoptions" ng-click="resetgame()">
+        לתפריט השלבים
+      </button>
+    </div>
+
+    <!-- all the cards -->
+    <div class="all-cards">
+      <div class="title">
+        <span class="terms-title">מושג</span>
+      </div>
+      <!-- terms cards -->
+      <div class="terms">
+        <div class="bigcard-definition bigcard-term" ng-show="termtouch" ng-click="bigCardFlip('term')">
+          {{cardCurrentValueTerm}}
+        </div>
+        <div ng-repeat="term in terms" data-type="term" class="card" ng-click="!donttouchterm&&smallCardFlip($index,'term')" ng-class={hide_card:term.matched}>
+
+          <div class="back">
+            <img src="img/termback.png" class="cardback">
+          </div>
+        </div>
+      </div>
+      <!-- definition cards -->
+      <div class="definitions">
+        <div class="bigcard-definition bigcard-definition2" ng-show="definitiontouch" ng-click="bigCardFlip('def')">
+          {{cardCurrentValueDef}}
+        </div>
+        <div ng-repeat="definition in definitions" data-type="definition" class="card" ng-click="!donttouchdef&&smallCardFlip($index,'def')"
+          ng-class={hide_card:definition.matched}>
+          <div class="back">
+            <img src="img/definitionback.png" class="cardback">
+          </div>
+        </div>
+
+      </div>
+      <div class="title">
+        <span class="definitions-title">הגדרה</span>
+      </div>
+    </div>
+
+    <!-- the bottom div -->
+    <div class="bottom img">
+      <img src="img/gamescreen.png" class="gamescreen">
+      <div class="bottom-line">
+        <!-- equal cards button -->
+        <button class="equal-cards" ng-click="equalcards()">התאם</button>
+        <!-- lifes   -->
+        <div class="life">
+          <div ng-repeat="life in life1 track by $index" ng-class={hide_card:!life1[$index]}>
+            <img src="img/heart.png" class="heart">
+          </div>
+        </div>
+        <img src="img/sidemenu.png" class="sidemenu" ng-click="tomenu()">
+        <!-- definitions dictionery -->
+        <div class="termsdict" ui-sref="glossary">
+          מילון מושגים
+        </div>
+        <!-- to gloassary page -->
+        <div class="go-glossary" ui-sref="glossary" ng-hide="gameover">
+
+          <img src="img/bookmark.svg" class="glossarypic-game">
+          <h1 class="glossary-title-game">מילון
+            <br>מושגים</h1>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
